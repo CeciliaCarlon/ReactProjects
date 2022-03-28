@@ -1,0 +1,26 @@
+a {
+  text-decoration: none;
+}
+.navBar {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  margin-top: 10%;
+}
+
+.searchDiv {
+  grid-auto-flow: column;
+  justify-items: center;
+  width: 500px;
+  height: 50px;
+}
+
+.logo {
+  color: rgb(185, 1, 1);
+  font-family: fantasy;
+  font-size: 50px;
+}
+
+.form {
+  width: 100%;
+}

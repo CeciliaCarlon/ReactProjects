@@ -1,0 +1,34 @@
+body {
+  color: #666;
+}
+.margins40 {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.marginTop25Percent {
+  margin-top: 25%;
+}
+
+.marginTop40 {
+  margin-top: 40px;
+}
+
+.center {
+  display: grid;
+  justify-items: center;
+}
+
+.pictureArtist {
+  width: 250px;
+  border-radius: 50%;
+  border: solid 1px #f4f4f4;
+}
+
+.artistContainer {
+  width: 700px;
+}
+
+.artistDescription {
+  text-align: center;
+}
