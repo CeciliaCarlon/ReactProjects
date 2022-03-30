@@ -6,7 +6,11 @@ class PageHome extends React.Component {
   state = {
     busqueda: "",
   };
-  changeHandle = (e) => {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.history.push("/search?" + this.state.busqueda);
+  };
+  onChange = (e) => {
     this.setState({ busqueda: e.target.value });
   };
   render() {
@@ -20,17 +24,15 @@ class PageHome extends React.Component {
             <form className="form" onSubmit={this.handleSubmit}>
               <input
                 className="inputBusqueda"
-                //value={this.props.busqueda} //Se guarda el value automatico en el estado para optimizar
+                value={this.props.busqueda}
                 type="search"
                 placeholder="Busca artista"
                 aria-label="Search"
-                onChange={this.props.onChange}
+                onChange={this.onChange}
               />
-              <Link to="search">
-                <button type="submit" className="searchButton">
-                  GO
-                </button>
-              </Link>
+              <button type="submit" className="searchButton">
+                GO
+              </button>
             </form>
           </div>
         </nav>

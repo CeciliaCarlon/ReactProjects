@@ -6,9 +6,23 @@ class PageSearchResult extends Component {
   state = {
     busqueda: "",
   };
+  componentDidMount() {
+    //Se usa substr() para eliminar un caracter
+    let search = this.props.history.location.search.substr(1);
+    this.setState({
+      busqueda: search,
+    });
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.history.push("/search?" + this.state.busqueda);
+  };
   changeHandle = (e) => {
     this.setState({ busqueda: e.target.value });
   };
+  componentWillReceiveProps(e) {
+    this.props.history.push("/search?" + this.state.busqueda);
+  }
   render() {
     return (
       <React.Fragment>

@@ -15,11 +15,16 @@ class SearchResult extends Component {
     },
   };
 
-  componentDidMount() {
+  componentWillReceiveProps(e) {
+    let termino = e.busqueda;
     this.fetchData(
-      "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=queen&api_key=fa0f6d50e3a6c20e775430014924475c&format=json"
+      "https://ws.audioscrobbler.com/2.0/?method=artist.getsimilar&artist=" +
+        termino +
+        "&api_key=fa0f6d50e3a6c20e775430014924475c&format=json"
     );
   }
+
+  componentDidMount() {}
 
   fetchData = async (url) => {
     this.setState({
@@ -36,6 +41,7 @@ class SearchResult extends Component {
       });
     } else {
       this.setState({
+        error: false,
         loading: false,
         data: data,
       });
